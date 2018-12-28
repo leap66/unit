@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+   android:oneshot="false">
+   <item
+      android:drawable="@mipmap/loop_grey_00"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_01"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_02"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_03"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_04"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_05"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_06"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_07"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_08"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_09"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_10"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_11"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_12"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_13"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_14"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_15"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_16"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_17"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_18"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_19"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_20"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_21"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_22"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_23"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_24"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_25"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_26"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_27"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_28"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_29"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_30"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_31"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_32"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_33"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_34"
+      android:duration="42" />
+   <item
+      android:drawable="@mipmap/loop_grey_35"
+      android:duration="42" />
+</animation-list>
