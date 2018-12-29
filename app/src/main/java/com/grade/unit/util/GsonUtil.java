@@ -2,10 +2,12 @@ package com.grade.unit.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
+import com.google.gson.JsonParser;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
@@ -14,6 +16,7 @@ import java.lang.reflect.Modifier;
 import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -44,8 +47,13 @@ public class GsonUtil {
   /**
    * 将json字符串转为 java列表对象
    */
-  synchronized public static <T> List<T> parse(String json, Type type) {
-    return getInstance().fromJson(json, type);
+  synchronized public static <T> List<T> parseList(String json, Class<T> t) {
+    List<T> list = new ArrayList<>();
+    JsonArray array = new JsonParser().parse(json).getAsJsonArray();
+    for (JsonElement elem : array) {
+      list.add(GsonUtil.parse(elem.toString(), t));
+    }
+    return list;
   }
 
   /**
