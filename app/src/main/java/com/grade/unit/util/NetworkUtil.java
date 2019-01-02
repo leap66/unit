@@ -8,7 +8,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.support.annotation.NonNull;
 
-import com.grade.unit.mgr.ContextMgr;
+import com.grade.unit.mgr.UnitContext;
 
 /**
  * NetworkUtil : 网络连接判断工具
@@ -18,7 +18,7 @@ import com.grade.unit.mgr.ContextMgr;
 public class NetworkUtil {
 
   public static boolean isConnected() {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     ConnectivityManager connMgr = (ConnectivityManager) context
         .getSystemService(Context.CONNECTIVITY_SERVICE);
     NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -34,7 +34,7 @@ public class NetworkUtil {
   }
 
   private static boolean isConnected(int type) {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     ConnectivityManager connMgr = (ConnectivityManager) context
         .getSystemService(Context.CONNECTIVITY_SERVICE);
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
