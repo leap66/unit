@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
@@ -60,22 +59,6 @@ public class DeviceInfoUtil {
   private static final String PREFS_DEVICE_ID = "gank_device_id";
   private static final String UN_PERMISSION = "无权限";
   private static String uuid;
-
-  /**
-   * 获取屏幕宽度
-   */
-  public static int getScreenWidth() {
-    DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
-    return metrics.widthPixels;
-  }
-
-  /**
-   * 获取屏幕高度
-   */
-  public static int getScreenHeight() {
-    DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
-    return metrics.heightPixels;
-  }
 
   /**
    * 获取国际移动用户识别码
