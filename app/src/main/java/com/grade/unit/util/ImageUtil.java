@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.view.View;
 
-import com.grade.unit.mgr.ContextMgr;
+import com.grade.unit.mgr.UnitContext;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -84,7 +84,7 @@ public class ImageUtil {
           }
         }
       }
-      ContextMgr.getInstance().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
+      UnitContext.getInstance().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
           Uri.fromFile(new File(path + "/" + name))));
     } finally {
       if (fos != null) {

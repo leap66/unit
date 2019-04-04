@@ -3,16 +3,16 @@ package com.grade.unit.mgr;
 import android.content.Context;
 
 /**
- * ContextMgr : 全局Context管理器 Application
+ * UnitContext : 全局Context管理器 Application
  * <p>
  * </> Created by ylwei on 2018/2/24.
  */
-public class ContextMgr {
+public class UnitContext {
   private static Object instance;
 
   public static Context getInstance() {
     if (null == instance)
-      throw new NullPointerException("you should init ContextMgr first");
+      throw new NullPointerException("you should init UnitContext first");
     return (Context) instance;
   }
 

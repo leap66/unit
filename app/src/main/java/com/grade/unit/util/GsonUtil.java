@@ -28,7 +28,7 @@ import java.util.Locale;
  */
 public class GsonUtil {
   private static Gson instance;
-  private static String dateFormat = DateUtil.DEFAULT_DATE_FORMAT;
+  private static String dateFormat = "yyyy-MM-dd HH:mm:ss";
 
   /**
    * 将obj对象转为json格式数据

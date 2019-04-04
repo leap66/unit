@@ -10,12 +10,12 @@ import com.grade.unit.util.GsonUtil;
  * <p>
  * </> Created by ylwei on 2018/2/24.
  */
-public class BaseStorageMgr {
+public class UnitStorage {
   private static SharedPreferences storage;
 
   // 初始化缓存管理
   public static void init() {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     storage = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
   }
 

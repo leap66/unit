@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
@@ -23,7 +22,7 @@ import android.util.DisplayMetrics;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.grade.unit.mgr.ContextMgr;
+import com.grade.unit.mgr.UnitContext;
 
 import org.json.JSONException;
 
@@ -62,27 +61,11 @@ public class DeviceInfoUtil {
   private static String uuid;
 
   /**
-   * 获取屏幕宽度
-   */
-  public static int getScreenWidth() {
-    DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
-    return metrics.widthPixels;
-  }
-
-  /**
-   * 获取屏幕高度
-   */
-  public static int getScreenHeight() {
-    DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
-    return metrics.heightPixels;
-  }
-
-  /**
    * 获取国际移动用户识别码
    */
   @SuppressLint("HardwareIds")
   public static String getImei() {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     if (ContextCompat.checkSelfPermission(context,
         Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED)
       return UN_PERMISSION;
@@ -94,7 +77,7 @@ public class DeviceInfoUtil {
    */
   @SuppressLint("HardwareIds")
   public static String getImsi() {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     if (ContextCompat.checkSelfPermission(context,
         Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED)
       return UN_PERMISSION;
@@ -137,7 +120,7 @@ public class DeviceInfoUtil {
 
   @SuppressLint("WifiManagerPotentialLeak")
   private static WifiInfo getWifiInfo() {
-    Context context = ContextMgr.getInstance().getApplicationContext();
+    Context context = UnitContext.getInstance().getApplicationContext();
     WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
     WifiInfo info = null;
     if (null != wifiManager) {
@@ -152,7 +135,7 @@ public class DeviceInfoUtil {
   @SuppressLint({
       "HardwareIds", "ApplySharedPref", "MissingPermission"})
   public synchronized static String getUDID() {
-    Context mContext = ContextMgr.getInstance();
+    Context mContext = UnitContext.getInstance();
     if (uuid == null) {
       final SharedPreferences prefs = mContext.getApplicationContext()
           .getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
@@ -207,7 +190,7 @@ public class DeviceInfoUtil {
    */
   @SuppressLint("MissingPermission")
   public static JsonElement getCellInfo() throws JSONException {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     if (ContextCompat.checkSelfPermission(context,
         Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
       return null;
@@ -246,7 +229,7 @@ public class DeviceInfoUtil {
    * 获取屏幕分辨率
    */
   public static String getScreenResolution() {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     DisplayMetrics dm = context.getResources().getDisplayMetrics();
     // WindowManager windowManager;
     // try {
@@ -268,7 +251,7 @@ public class DeviceInfoUtil {
    * 获取屏幕类型 1- 横屏 0- 竖屏
    */
   public static String getScreenType() {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     Configuration mConfiguration = context.getResources().getConfiguration();
     int ori = mConfiguration.orientation;
     if (ori == Configuration.ORIENTATION_LANDSCAPE) {
@@ -291,7 +274,7 @@ public class DeviceInfoUtil {
    */
   @SuppressLint("HardwareIds")
   public static String getOperators() {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     if (ContextCompat.checkSelfPermission(context,
         Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED)
       return UN_PERMISSION;
@@ -314,7 +297,7 @@ public class DeviceInfoUtil {
    * 获取当前网络状态
    */
   public static String getNetworkType() {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     String strNetworkType = "无网络";
     NetworkInfo networkInfo = ((ConnectivityManager) context
         .getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
@@ -395,7 +378,7 @@ public class DeviceInfoUtil {
    * 获取当前系统语言格式
    */
   public static String getSystemLanguage() {
-    Context mContext = ContextMgr.getInstance();
+    Context mContext = UnitContext.getInstance();
     Locale locale = mContext.getResources().getConfiguration().locale;
     String language = locale.getLanguage();
     String country = locale.getCountry();
@@ -488,7 +471,7 @@ public class DeviceInfoUtil {
    * 获取屏幕尺寸
    */
   public static String getPhoneSize() {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     DecimalFormat df = new DecimalFormat("######0.0");
     DisplayMetrics dm = context.getResources().getDisplayMetrics();
     int width = dm.widthPixels;

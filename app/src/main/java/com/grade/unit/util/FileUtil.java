@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.v4.content.FileProvider;
 
-import com.grade.unit.mgr.ContextMgr;
+import com.grade.unit.mgr.UnitContext;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -48,7 +48,7 @@ public class FileUtil {
     BufferedOutputStream bos = null;
     FileOutputStream fos = null;
     try {
-      String filePath = ContextMgr.getInstance().getCacheDir().getAbsolutePath();
+      String filePath = UnitContext.getInstance().getCacheDir().getAbsolutePath();
       File file = new File(filePath, fileName);
       fos = new FileOutputStream(file);
       bos = new BufferedOutputStream(fos);
@@ -97,7 +97,7 @@ public class FileUtil {
 
   // 获取文件地址
   public static String getFilePath(String fileName) {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     if (android.os.Environment.getExternalStorageState()
         .equals(android.os.Environment.MEDIA_MOUNTED)) {
       return context.getExternalCacheDir() + "/" + fileName;
@@ -116,7 +116,7 @@ public class FileUtil {
 
   // 安装apk
   public static void installApk(String apkPath) {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     Intent intent = new Intent();
     intent.setAction(Intent.ACTION_VIEW);
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.grade.unit.R;
 import com.grade.unit.databinding.ItemToastBinding;
-import com.grade.unit.mgr.ContextMgr;
+import com.grade.unit.mgr.UnitContext;
 
 /**
  * Toast 格式化工具
@@ -22,7 +22,7 @@ public class ToastUtil {
   private static Toast toastSingle;
 
   public static void showHint(int stringResId) {
-    String s = ContextMgr.getInstance().getResources().getString(stringResId);
+    String s = UnitContext.getInstance().getResources().getString(stringResId);
     showHint(s);
   }
 
@@ -31,7 +31,7 @@ public class ToastUtil {
   }
 
   public static void showFailure(int stringResId) {
-    String text = ContextMgr.getInstance().getResources().getString(stringResId);
+    String text = UnitContext.getInstance().getResources().getString(stringResId);
     showFailure(text);
   }
 
@@ -40,7 +40,7 @@ public class ToastUtil {
   }
 
   public static void showSuccess(int stringResId) {
-    String text = ContextMgr.getInstance().getResources().getString(stringResId);
+    String text = UnitContext.getInstance().getResources().getString(stringResId);
     showSuccess(text);
   }
 
@@ -49,7 +49,7 @@ public class ToastUtil {
   }
 
   private static void showToast(String text, int imageResource) {
-    Context context = ContextMgr.getInstance();
+    Context context = UnitContext.getInstance();
     ItemToastBinding binding = DataBindingUtil.inflate(LayoutInflater.from(context),
         R.layout.item_toast, null, false);
     Toast toast = new Toast(context);

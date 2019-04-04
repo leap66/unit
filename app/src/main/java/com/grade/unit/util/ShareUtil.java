@@ -5,7 +5,7 @@ import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.os.Environment;
 
-import com.grade.unit.mgr.ContextMgr;
+import com.grade.unit.mgr.UnitContext;
 
 import java.io.File;
 
@@ -36,7 +36,7 @@ public class ShareUtil {
         break;
     }
     shareIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    ContextMgr.getInstance().startActivity(shareIntent);
+    UnitContext.getInstance().startActivity(shareIntent);
   }
 
   // 根据文件后缀名获得对应的MIME类型。
